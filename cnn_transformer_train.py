@@ -5,6 +5,7 @@
 import numpy as np
 import torch
 import os
+import math
 from PIL import Image
 import matplotlib.pyplot as plt
 import torchvision.transforms as transforms
@@ -130,7 +131,6 @@ check_dir = "/home/youzhiwang/cnnbio_transformer/checkpoints"
 min_valid_loss = math.inf
 overall_train_loss = []
 overall_valid_loss = []
-torch.save(model.state_dict(), temp_dir)
 
 for epoch in tqdm(range(100)):
     train_loss, valid_loss = train_net(model, 1, train_dataloader, test_dataloader, optimizer, loss_function, device)
